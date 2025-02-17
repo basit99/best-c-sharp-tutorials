@@ -116,7 +116,7 @@
      </a>
      </div>
  <ul>
-  <li> <a href="index.html" > Step1 </a> </li>
+  <li> <a href="index.html" > Step1</a> </li>
   <li> <a href="step2.html" > Step2 </a> </li>
   <li> <a href="contact.html" > Contact Us </a> </li>
   
@@ -126,27 +126,64 @@
 
     <div class="newStyle3">
 
-        <p>   install visual studio  </p>  
+        <p>   insert data into data base </p>  
 
     </div>
 
-
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/GCrfYPQi5lE?si=h-Wg_UFjcyGBeJU6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="newStyle3"></iframe>
-
-    <div class="newStyle3">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/85o-MeORuWM?si=vFGep7cM8c6xNG9U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="newStyle3"></iframe>
     
-      <p> install sql server </p>
-    </div>
-
-
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/gH8p-qA3Nj4?si=SM5cwDIXSFvdkA_o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="newStyle3"></iframe>
-
+     
+    <p class="newStyle3"> webform1.aspx.cs </p>
+     <p class="newStyle3"> using System.Configration;</p>
+     <p class="newStyle3"> using System.Data.SqlClient;</p>
+                                         
     <div class="newStyle3">
+
+      <p>   protected void Button1_Click(object sender, EventArgs e) </p>
+      <p>
+      
+        {
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["gametrackerConnectionString5"].ConnectionString);
+            con.Open();
+            SqlCommand cmd = new SqlCommand("insert into Tableplayer values('" + TextBox1.Text + "','" + TextBox2.Text + "','" + TextBox3.Text + "','"+TextBox4.Text+"','"+TextBox5.Text+"','"+TextBox6.Text+"')", con);
+            cmd.ExecuteNonQuery();
+            con.Close();
+            GridView1.DataBind();
+            Label1.Visible = true;
+            Label1.Text = "sucessfully submitted";
+            TextBox1.Text = "";
+            TextBox2.Text = "";
+            TextBox3.Text = "";
+            TextBox4.Text = "";
+            TextBox5.Text = "";
+            TextBox6.Text = "";
+        }
+     
+      </p>
+
+    </div>
+      
+
+
 
      
 
+    
+      
+      
+        
+    
+    
+    
+    
+    
+      
+    
 
-    </div>
+
+    
+
+    
 
      
     
