@@ -1,0 +1,175 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Teams.aspx.cs" Inherits="gametracker.Teams" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="NewFolder2/StyleSheet2.css" rel="stylesheet" />
+    <link href="Content/StyleSheet1.css" rel="stylesheet" />
+    <style type="text/css">
+        .auto-style2 {
+            text-align: center;
+        }
+        .auto-style3 {
+            width: 72%;
+            margin-left: 192px;
+            background-color: #DC143C;
+        }
+        .auto-style4 {
+            width: 436px;
+        }
+        .auto-style5 {
+            width: 76%;
+            height: 28px;
+            margin-left: 186px;
+            background-color: #DC143C;
+        }
+        .auto-style6 {
+            width: 410px;
+        }
+        .auto-style7 {
+            margin-left: 361px;
+            margin-top: 38px;
+        }
+        .auto-style8 {
+            margin-left: 16px;
+            margin-top: 129px;
+        }
+        #header {
+            width: 1500px;
+            height: 40px;
+        }
+        #footer {
+            width: 1500px;
+            height: 30px;
+        }
+        </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <div id="header"></div>
+         <asp:Panel ID="Panel1" runat="server" CssClass="auto-style8" Height="152px" Width="123px">
+            
+         <div id="menu">
+            <ul>
+                
+                <li><a href="#">Coach Tasks</a></li>
+                <li><a href="#">
+                    <asp:HyperLink ID="HyperLink3" runat="server" Text="Home" NavigateUrl="~/gameevents.aspx"></asp:HyperLink> </a></li>
+            <li><a href="#"> <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/coach.aspx">Schedules</asp:HyperLink> </a></li>
+             <li><a href="#"> <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Teams.aspx">Teams</asp:HyperLink></a></li>
+                </ul>
+             </div>
+        </asp:Panel>
+    
+    </div>
+        <h2 class="auto-style2">&nbsp;</h2>
+        <h4 class="auto-style2">[Please fill all the blank boxes while performing insert, update and delete operations to avoid bugs]</h4>
+        <h2 class="auto-style2"><strong>Team Players</strong></h2>
+        <p class="auto-style2">&nbsp;</p>
+        <p class="auto-style2">
+            <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:gametrackerConnectionString5 %>" SelectCommand="SELECT * FROM [Tableplayer]"></asp:SqlDataSource>
+            Insert Players</p>
+        <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:gametrackerConnectionString4 %>" SelectCommand="SELECT * FROM [Tableplayer]"></asp:SqlDataSource>
+        <table class="auto-style3">
+            <tr>
+                <td class="auto-style4">Team Name:</td>
+                <td>
+                    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style4">
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:gametrackerConnectionString2 %>" SelectCommand="SELECT * FROM [Tableplayer]"></asp:SqlDataSource>
+                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:gametrackerConnectionString3 %>" SelectCommand="SELECT * FROM [Tableplayer]"></asp:SqlDataSource>
+                    Player 1 Name:</td>
+                <td>
+                    <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style4">Player 2 Name :</td>
+                <td>
+                    <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style4">Player 3 Name</td>
+                <td>
+                    <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style4">Player 4 Name</td>
+                <td>
+                    <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style4">Player 5 Name</td>
+                <td>
+                    <asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style4">&nbsp;</td>
+                <td>
+                    <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Insert" />
+                </td>
+            </tr>
+        </table>
+        <p>
+            <asp:Label ID="Label1" runat="server" Text="Label" Visible="False"></asp:Label>
+        </p>
+        <p class="auto-style2">
+            &nbsp;</p>
+        <p class="auto-style2">
+            Delete&nbsp; Data Into Database</p>
+        
+        <p class="auto-style2">
+            <asp:Label ID="Label2" runat="server" Text="Label" Visible="False"></asp:Label>
+        </p>
+        <p class="auto-style2">
+            &nbsp;</p>
+        <table class="auto-style5">
+            <tr>
+                <td class="auto-style6">Id:</td>
+                <td>
+                    <asp:TextBox ID="TextBox7" runat="server"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style6">&nbsp;</td>
+                <td>
+                    <asp:Button ID="Button2" runat="server" Text="Delete" OnClick="Button2_Click" />
+                </td>
+            </tr>
+        </table>
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" CssClass="auto-style7" DataKeyNames="id" DataSourceID="SqlDataSource4" ForeColor="#333333" GridLines="None">
+            <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+            <Columns>
+                <asp:BoundField DataField="id" HeaderText="id" InsertVisible="False" ReadOnly="True" SortExpression="id" />
+                <asp:BoundField DataField="teamname" HeaderText="teamname" SortExpression="teamname" />
+                <asp:BoundField DataField="player1name" HeaderText="player1name" SortExpression="player1name" />
+                <asp:BoundField DataField="player2name" HeaderText="player2name" SortExpression="player2name" />
+                <asp:BoundField DataField="player3name" HeaderText="player3name" SortExpression="player3name" />
+                <asp:BoundField DataField="palyer4nameE" HeaderText="palyer4name" SortExpression="palyer4nameE" />
+                <asp:BoundField DataField="player5name" HeaderText="player5name" SortExpression="player5name" />
+            </Columns>
+            <EditRowStyle BackColor="#999999" />
+            <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+            <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+            <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+            <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+            <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+            <SortedAscendingCellStyle BackColor="#E9E7E2" />
+            <SortedAscendingHeaderStyle BackColor="#506C8C" />
+            <SortedDescendingCellStyle BackColor="#FFFDF8" />
+            <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
+        </asp:GridView>
+        <div id="footer"></div>
+    </form>
+</body>
+</html>
