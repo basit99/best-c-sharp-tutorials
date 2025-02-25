@@ -1,0 +1,58 @@
+﻿body {
+
+}
+*{
+    margin:0px;
+    padding:0px;
+}
+#menu ul{
+    list-style: none;
+
+}
+
+#menu ul li{
+    background-color:#0992ee;
+    border: solid 1px white ;
+    width:120px;
+    height: 35px;
+    text-align:center;
+    float:left;
+    
+    
+   
+    
+   
+
+
+}
+#menu ul li a{
+    text-decoration:none;
+    color:white;
+    background-color: #0992ee;
+    
+    
+}
+#menu ul li a:hover{
+    background-color:crimson;
+    color:white;
+    
+    
+}
+
+#menu ul ul{
+    
+    display: none;
+    
+}
+#menu ul li > ul li{
+    background-color:#0992ee;
+    
+}
+#menu ul li:hover > ul{
+    position:absolute;
+    display: grid;
+    
+}
+
+
+
